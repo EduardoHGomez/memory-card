@@ -1,6 +1,6 @@
 import './../styles/card.css' 
 
-function Card() {
+function Card(props) {
 
     return (
         <div className="card">
@@ -8,7 +8,7 @@ function Card() {
                 Image
             </div>
             <div className="card-footer">
-                Office
+                {props.name}
             </div>
         </div>
     )

@@ -1,0 +1,9 @@
+
+
+.game-container {
+    background-color: #fbf7f1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 3rem;
+    justify-content: center;
+}

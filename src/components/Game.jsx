@@ -1,9 +1,19 @@
 import Card from "./Card";
+import './../styles/container.css'
 
-function Game() {
+function Game(props) {
+    const characters = props.charactersList;
 
     return (
-        <Card/>
+        <div>
+            <div className="game-container">
+                {
+                    characters.map((character) => {
+                        return <Card name={character}/>
+                    })
+                }
+            </div>
+        </div>
     );
 }
 
