@@ -1,9 +1,15 @@
+import './../styles/card.css' 
 
 function Card() {
 
     return (
         <div className="card">
-            Card
+            <div className="card-image">
+                Image
+            </div>
+            <div className="card-footer">
+                Office
+            </div>
         </div>
     )
 }

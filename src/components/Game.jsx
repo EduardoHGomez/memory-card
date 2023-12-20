@@ -4,8 +4,7 @@ function Game() {
 
     return (
         <Card/>
-    )
-
+    );
 }
 
 export default Game;
