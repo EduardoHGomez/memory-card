@@ -1,0 +1,21 @@
+
+
+.card {
+    outline: 1px solid gray;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #faf8ec;
+    padding: 1.25rem;
+
+    height: 10rem;
+    width: 7rem;
+    cursor: pointer;
+}
+
+.card-image {
+    outline: 1px solid #381f10;
+}
+
+.card-footer {
+    color: #381f10;
+    font-size: 1.5rem;
+}

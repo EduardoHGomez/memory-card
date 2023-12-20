@@ -1,9 +1,15 @@
+import './../styles/card.css' 
 
-function Card() {
+function Card(props) {
 
     return (
         <div className="card">
-            Card
+            <div className="card-image">
+                Image
+            </div>
+            <div className="card-footer">
+                {props.name}
+            </div>
         </div>
     )
 }
