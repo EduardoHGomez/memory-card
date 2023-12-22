@@ -9,7 +9,7 @@ function Game(props) {
             <div className="game-container">
                 {
                     characters.map((character) => {
-                        return <Card name={character}/>
+                        return <Card key={character} name={character}/>
                     })
                 }
             </div>

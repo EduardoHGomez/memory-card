@@ -1,17 +1,39 @@
+import { useState } from 'react';
 import './../styles/card.css' 
 
 function Card(props) {
+    const [clicked, setClicked] = useState(false);
 
-    return (
-        <div className="card">
-            <div className="card-image">
-                Image
+    const handleClick = () => {
+        setClicked(true);
+    }
+    
+    if (clicked) {
+        return (
+            <div className="card" onClick={handleClick}>
+                <div className="card-image">
+                    Image
+                </div>
+                <div className="card-footer">
+                    {props.name}
+                </div>
             </div>
-            <div className="card-footer">
-                {props.name}
+        )
+    }
+
+    else {
+        return (
+            <div className="card" onClick={handleClick}>
+                <div className="card-image">
+                    Image
+                </div>
+                <div className="card-footer">
+                    {props.name}
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
+
 }
 
 export default Card;
