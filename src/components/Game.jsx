@@ -25,6 +25,13 @@ function Game() {
         restartGame();
     }
 
+    const updateClicked = (name) => {
+        const index = characters.findIndex((o) => o.name === name);
+        let currentCharacters = {...characters};
+        currentCharacters[index].clicked = true;
+        //setCharacters(currentCharacters);
+    }
+
     const updateScore = () => {
         const scoreToUpdate = score + 1;
         setScore(scoreToUpdate);
@@ -55,7 +62,9 @@ function Game() {
                 {
                     characters.map((character) => {
                         return <Card key={character.name} 
+                        clicked={character.clicked}
                         updateScore={updateScore}
+                        updateClicked={updateClicked}
                         finishGame={finishGame}
                         name={character.name}/>
                     })
