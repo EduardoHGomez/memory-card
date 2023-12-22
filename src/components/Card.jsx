@@ -3,19 +3,18 @@ import './../styles/card.css'
 
 function Card(props) {
     const updateScore = props.updateScore;
+    const updateClicked = props.updateClicked;
 
-    const [clicked, setClicked] = useState(false);
-
-    const handleClick = () => {
-        setClicked(true);
+    const handleClick = (name) => {
         updateScore();
+        updateClicked(name);
     }
 
     const restartCard = () => {
-        props.finishGame();
+        alert("Lost gamee ");
     }
     
-    if (clicked) {
+    if (props.clicked) {
         return (
             <div className="card clicked" onClick={restartCard}>
                 <div className="card-image">
@@ -31,7 +30,7 @@ function Card(props) {
     else {
         return (
             <div className="card" 
-            onClick={handleClick}
+            onClick={() => handleClick(props.name)}
                 >
                 <div className="card-image">
                     Image
