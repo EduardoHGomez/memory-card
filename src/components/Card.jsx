@@ -10,10 +10,14 @@ function Card(props) {
         setClicked(true);
         updateScore();
     }
+
+    const restartCard = () => {
+        props.finishGame();
+    }
     
     if (clicked) {
         return (
-            <div className="card clicked" onClick={props.finishGame}>
+            <div className="card clicked" onClick={restartCard}>
                 <div className="card-image">
                     Image
                 </div>
