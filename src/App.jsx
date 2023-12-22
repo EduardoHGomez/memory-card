@@ -20,6 +20,11 @@ function App() {
         'Ryan'
     ]);
 
+    const updateScore = () => {
+        const scoreToUpdate = score + 1;
+        setScore(scoreToUpdate);
+    }
+
 
     return (
         <div>
@@ -27,7 +32,9 @@ function App() {
                 <p>Score: {score}</p>
                 <p>Best score: {bestScore}</p>
             </div>
-            <Game charactersList={characters}/>
+            <Game 
+            updateScore={updateScore}
+            charactersList={characters}/>
         </div>
     );
 }

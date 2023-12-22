@@ -11,6 +11,10 @@
     cursor: pointer;
 }
 
+.card.clicked {
+    border: 1px solid red;
+}
+
 .card-image {
     outline: 1px solid #381f10;
 }
