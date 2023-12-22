@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Clock from './examples/Clock'
 import Game from './components/Game'
 
@@ -25,6 +25,17 @@ function App() {
         setScore(scoreToUpdate);
     }
 
+    const restartGame = () => {
+        if (score > bestScore) {
+            setBestScore(score);
+        }
+        setScore(0);
+    }
+
+    useEffect(() => {
+        console.log("New");
+    })
+
 
     return (
         <div>
@@ -33,6 +44,7 @@ function App() {
                 <p>Best score: {bestScore}</p>
             </div>
             <Game 
+            restartGame={restartGame}
             updateScore={updateScore}
             charactersList={characters}/>
         </div>
