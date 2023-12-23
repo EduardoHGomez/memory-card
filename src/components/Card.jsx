@@ -11,7 +11,7 @@ function Card(props) {
     }
 
     const restartCard = () => {
-        alert("Lost gamee ");
+        props.finishGame();
     }
     
     if (props.clicked) {

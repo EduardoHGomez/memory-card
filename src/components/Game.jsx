@@ -23,6 +23,7 @@ function Game() {
     const finishGame = () => {
         alert('Lost');
         restartGame();
+        console.log("Here");
     }
 
     const updateClicked = (name) => {
@@ -39,25 +40,14 @@ function Game() {
 
     const restartGame = () => {
         // Idea: maybe set all characters as an array?
-    setCharacters([
-        {name: 'Dwight', clicked: false},
-        {name: 'Jim', clicked: false},
-        {name: 'Michael', clicked: false},
-        {name: 'Pam', clicked: false},
-        {name: 'Oscar', clicked: false},
-        {name: 'Angela', clicked: false},
-        {name: 'Stanley', clicked: false},
-        {name: 'Phyllis', clicked: false},
-        {name: 'Andy', clicked: false},
-        {name: 'Erin', clicked: false},
-        {name: 'Kelly', clicked: false},
-        {name: 'Ryan', clicked: false}
-    ]);
+        let currentCharacters = characters;
+        currentCharacters.forEach((character) => character.clicked = false)
         
         if (score > bestScore) {
             setBestScore(score);
         }
         setScore(0);
+        setCharacters(currentCharacters);
     }
 
     useEffect(() => {
