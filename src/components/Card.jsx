@@ -18,7 +18,7 @@ function Card(props) {
         return (
             <div className="card clicked" onClick={restartCard}>
                 <div className="card-image">
-                    Image
+                    <img src={props.image}></img>
                 </div>
                 <div className="card-footer">
                     {props.name}
@@ -33,7 +33,7 @@ function Card(props) {
             onClick={() => handleClick(props.name)}
                 >
                 <div className="card-image">
-                    Image
+                    <img src={props.image}></img>
                 </div>
                 <div className="card-footer">
                     {props.name}

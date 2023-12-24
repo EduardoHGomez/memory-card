@@ -54,7 +54,7 @@ function Game() {
 
 
     useEffect(() => {
-        fetch("https://0e1d8480-e3ea-4286-9d8f-36e9f0f4d750.mock.pstmn.io/the-office-characteres")
+        const fetchCharacters = async() => await fetch("https://0e1d8480-e3ea-4286-9d8f-36e9f0f4d750.mock.pstmn.io/the-office-characteres")
         .then(response => response.json())
             // 4. Setting *dogImage* to the image url that we received from the response above
         .then((data) => {
@@ -67,6 +67,8 @@ function Game() {
 
             setCharacters(newCharacters);
         });
+
+        fetchCharacters();
 
     },[])
 
@@ -87,6 +89,7 @@ function Game() {
                             clicked={character.clicked}
                             updateScore={updateScore}
                             updateClicked={updateClicked}
+                            image={character.image}
                             finishGame={finishGame}
                             name={character.name}/>
                         })
