@@ -36,6 +36,7 @@ function Game() {
     const updateScore = () => {
         const scoreToUpdate = score + 1;
         setScore(scoreToUpdate);
+        shuffleCards();
     }
 
     const restartGame = () => {
@@ -49,6 +50,22 @@ function Game() {
         setScore(0);
         setCharacters(currentCharacters);
     }
+
+    function shuffleCards() {
+        let tempCharacters = [...characters];
+        var i = tempCharacters.length, j, temp;
+
+        while(--i > 0) {
+            j = Math.floor(Math.random() * (i+1));
+            temp = tempCharacters[j];
+            tempCharacters[j] = tempCharacters[i];
+            tempCharacters[i] = temp;
+        }
+
+        setCharacters(tempCharacters);
+    }
+
+
 
     useEffect(() => {
         console.log("New");
