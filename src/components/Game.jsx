@@ -5,20 +5,7 @@ import { useEffect, useState } from "react";
 function Game() {
     const [score, setScore] = useState(0);
     const [bestScore, setBestScore] = useState(0);
-    const [characters, setCharacters] = useState([
-        {name: 'Dwight', clicked: false},
-        {name: 'Jim', clicked: false},
-        {name: 'Michael', clicked: false},
-        {name: 'Pam', clicked: false},
-        {name: 'Oscar', clicked: false},
-        {name: 'Angela', clicked: false},
-        {name: 'Stanley', clicked: false},
-        {name: 'Phyllis', clicked: false},
-        {name: 'Andy', clicked: false},
-        {name: 'Erin', clicked: false},
-        {name: 'Kelly', clicked: false},
-        {name: 'Ryan', clicked: false}
-    ]);
+    const [characters, setCharacters] = useState(null);
 
     const finishGame = () => {
         alert('Lost');
@@ -66,10 +53,22 @@ function Game() {
     }
 
 
-
     useEffect(() => {
-        console.log("New");
-    })
+        fetch("https://0e1d8480-e3ea-4286-9d8f-36e9f0f4d750.mock.pstmn.io/the-office-characteres")
+        .then(response => response.json())
+            // 4. Setting *dogImage* to the image url that we received from the response above
+        .then((data) => {
+            let newCharacters = [];
+            
+            data.forEach((character) => {
+                character.clicked = false;
+                newCharacters.push(character);
+            });
+
+            setCharacters(newCharacters);
+        });
+
+    },[])
 
 
     return (
@@ -82,15 +81,16 @@ function Game() {
 
 
             <div className="game-container">
-                {
-                    characters.map((character) => {
-                        return <Card key={character.name} 
-                        clicked={character.clicked}
-                        updateScore={updateScore}
-                        updateClicked={updateClicked}
-                        finishGame={finishGame}
-                        name={character.name}/>
-                    })
+                {characters && (
+                        characters.map((character) => {
+                            return <Card key={character.name} 
+                            clicked={character.clicked}
+                            updateScore={updateScore}
+                            updateClicked={updateClicked}
+                            finishGame={finishGame}
+                            name={character.name}/>
+                        })
+                    )
                 }
             </div>
         </div>
