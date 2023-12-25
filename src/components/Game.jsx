@@ -6,6 +6,7 @@ function Game() {
     const [score, setScore] = useState(0);
     const [bestScore, setBestScore] = useState(0);
     const [characters, setCharacters] = useState(null);
+    const [loaded, setLoaded] = useState(false);
 
     const finishGame = () => {
         alert('Lost');
@@ -69,34 +70,43 @@ function Game() {
         });
 
         fetchCharacters();
+        setLoaded(true);
 
     },[])
 
 
     return (
+
         <div>
 
-            <div className="game-header">
-                <p>Score: {score}</p>
-                <p>Best score: {bestScore}</p>
-            </div>
-
-
-            <div className="game-container">
-                {characters && (
-                        characters.map((character) => {
-                            return <Card key={character.name} 
-                            clicked={character.clicked}
-                            updateScore={updateScore}
-                            updateClicked={updateClicked}
-                            image={character.image}
-                            finishGame={finishGame}
-                            name={character.name}/>
-                        })
-                    )
-                }
-            </div>
         </div>
+
+        { loaded && (
+            <div>
+                <div className="game-header">
+                    <p>Score: {score}</p>
+                    <p>Best score: {bestScore}</p>
+                </div>
+
+
+                <div className="game-container">
+                    {characters && (
+                            characters.map((character) => {
+                                return <Card key={character.name} 
+                                clicked={character.clicked}
+                                updateScore={updateScore}
+                                updateClicked={updateClicked}
+                                image={character.image}
+                                finishGame={finishGame}
+                                name={character.name}/>
+                            })
+                        )
+                    }
+                </div>
+            </div>
+            )
+
+        }
     );
 }
 
