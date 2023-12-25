@@ -78,16 +78,13 @@ function Game() {
     return (
 
         <div>
-
-        </div>
-
-        { loaded && (
+        {
+            loaded ?
             <div>
                 <div className="game-header">
                     <p>Score: {score}</p>
                     <p>Best score: {bestScore}</p>
                 </div>
-
 
                 <div className="game-container">
                     {characters && (
@@ -104,9 +101,13 @@ function Game() {
                     }
                 </div>
             </div>
-            )
-
+            :
+            <div>
+                <h2>Loading...</h2>
+            </div>
         }
+
+        </div>
     );
 }
 
