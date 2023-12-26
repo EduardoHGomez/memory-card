@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
-import Clock from './examples/Clock'
 import Game from './components/Game'
+import './styles/app.css' 
 
 function App() {
-
 
     return (
         <Game/>
