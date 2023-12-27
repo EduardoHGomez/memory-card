@@ -12,13 +12,19 @@ function App() {
         setChoosingDifficulty(false);
     }
 
-
-    if (choosingDifficulty) {
-        return <Menu selectDifficulty={selectDifficulty}/>
-    }
-    else {
-        return <Game amountOfCards={cards}/>
-    }
+    return (
+        <>
+            <div className='header'>
+                <img src='https://preview.redd.it/phooeof2mie41.png?width=7087&format=png&auto=webp&s=deeb847cf786d862f7cb3b038571c63e417d20ce'/>
+                <h1>Memory card</h1>
+            </div>
+                {
+                    choosingDifficulty ?
+                        <Menu selectDifficulty={selectDifficulty}/>
+                        :<Game amountOfCards={cards}/>
+                }
+        </>
+    )
 }
 
 export default App

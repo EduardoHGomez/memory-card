@@ -19,6 +19,11 @@ function Game(props) {
         let currentCharacters = {...characters};
         currentCharacters[index].clicked = true;
         //setCharacters(currentCharacters);
+
+        if (score === props.amountOfCards - 1) {
+            alert("You won!");
+            restartGame();
+        }
     }
 
     const updateScore = () => {
@@ -103,7 +108,7 @@ function Game(props) {
                 </div>
             </div>
             :
-            <div>
+            <div className="loading">
                 <h2>Loading...</h2>
             </div>
         }

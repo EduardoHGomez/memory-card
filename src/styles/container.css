@@ -5,11 +5,34 @@
     flex-wrap: wrap;
     gap: 1rem 3rem;
     justify-content: center;
+    margin-top: 2%;
+}
+
+.game-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(31, 32, 35);
+    gap: 9%;
 }
 
 .game-header p{
     font-family: 'Nunito Sans', sans-serif;
     margin: 0px;
     font-weight: 600;
+    font-size: x-large;
+
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    justify-self: center;
+    color: rgb(31, 32, 35);
+    font-family: 'Nunito Sans', sans-serif;
     font-size: x-large;
 }
