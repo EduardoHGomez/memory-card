@@ -108,7 +108,7 @@ function Game(props) {
                 </div>
             </div>
             :
-            <div>
+            <div className="loading">
                 <h2>Loading...</h2>
             </div>
         }

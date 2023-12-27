@@ -73,14 +73,11 @@
     -moz-box-shadow: 0px 0px 19px 0px rgba(74,69,74,0.77);
     box-shadow: 0px 0px 19px 0px rgba(74,69,74,0.77);
 
-    height: 12rem;
+    height: 11rem;
     width: 8rem;
     cursor: pointer;
 }
 
-.card.clicked {
-    border: 1px solid red;
-}
 
 .card-image {
     height: 9rem;
