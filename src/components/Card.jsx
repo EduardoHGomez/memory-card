@@ -29,7 +29,7 @@ function Card(props) {
 
     else {
         return (
-            <div className="card" 
+            <div className="card " 
             onClick={() => handleClick(props.name)}
                 >
                 <div className="card-image">

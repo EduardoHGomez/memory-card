@@ -19,6 +19,11 @@ function Game(props) {
         let currentCharacters = {...characters};
         currentCharacters[index].clicked = true;
         //setCharacters(currentCharacters);
+
+        if (score === props.amountOfCards - 1) {
+            alert("You won!");
+            restartGame();
+        }
     }
 
     const updateScore = () => {
