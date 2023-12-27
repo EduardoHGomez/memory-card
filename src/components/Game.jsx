@@ -2,7 +2,7 @@ import Card from "./Card";
 import './../styles/container.css'
 import { useEffect, useState } from "react";
 
-function Game() {
+function Game(props) {
     const [score, setScore] = useState(0);
     const [bestScore, setBestScore] = useState(0);
     const [characters, setCharacters] = useState(null);
@@ -37,6 +37,7 @@ function Game() {
         }
         setScore(0);
         setCharacters(currentCharacters);
+        shuffleCards();
     }
 
     function shuffleCards() {
@@ -65,13 +66,13 @@ function Game() {
                 character.clicked = false;
                 newCharacters.push(character);
             });
+            let charactersToPlay = newCharacters.slice(0, props.amountOfCards);
 
-            setCharacters(newCharacters);
+            setCharacters(charactersToPlay);
+            setLoaded(true);
         });
 
         fetchCharacters();
-        setLoaded(true);
-
     },[])
 
 
